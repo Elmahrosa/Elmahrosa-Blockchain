@@ -1,1 +1,34 @@
-
+ELMAHROSA-INTERNATIONAL/
+├── core/                     # Core blockchain implementation
+│   ├── consensus/            # Consensus mechanism (PoS/PoA using Tendermint)
+│   ├── smart_contracts/      # Smart contracts in Rust and Solidity
+│   ├── transaction_engine/   # Transaction processing logic
+│   └── node/                # Node implementation
+├── interoperability/         # Cross-chain communication and token standards
+│   ├── ibc/                 # Inter-Blockchain Communication (IBC) protocols
+│   └── bridges/             # Cross-chain bridges (e.g., Ethereum)
+├── compliance/               # Regulatory reporting and KYC/AML integration
+│   ├── reporting/           # Regulatory reporting tools
+│   └── kyc_aml/            # KYC/AML integration logic
+├── security/                 # Security features (formal verification, multi-sig)
+│   ├── formal_verification/ # Smart contract verification tools
+│   └── multi_signature/     # Multi-signature transaction logic
+├── infrastructure/           # Infrastructure and deployment configurations
+│   ├── kubernetes/          # Kubernetes manifests
+│   ├── terraform/           # Infrastructure as Code (IaC) scripts
+│   └── monitoring/          # Prometheus/Grafana configurations
+├── client_sdks/              # Client SDKs for developers
+│   ├── javascript/          # JavaScript/TypeScript SDK
+│   └── python/              # Python SDK for regulatory tools
+├── tests/                    # Unit and integration tests
+│   ├── core_tests/          # Tests for core blockchain
+│   └── smart_contract_tests/ # Tests for smart contracts
+├── docs/                     # Documentation (using Docusaurus)
+├── Dockerfile                # Docker configuration for containerization
+├── docker-compose.yml        # Docker Compose for local development
+├── .github/                  # CI/CD configuration
+│   ├── workflows/           # GitHub Actions workflows
+│   └── dependabot.yml       # Dependency management
+├── README.md                 # Project overview
+├── LICENSE                   # License file
+└── .gitignore                # Git ignore file
