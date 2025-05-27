@@ -1,0 +1,33 @@
+package core
+
+import (
+    "github.com/tendermint/tendermint/types"
+    "github.com/tendermint/tendermint/crypto"
+    "time"
+)
+
+type Validator struct {
+    Address crypto.Address
+    Stake   uint64
+}
+
+func (v *Validator) ProposeBlock(height int64) *types.Block {
+    block := &types.Block{
+        Header: types.Header{
+            Height:  height,
+            Time:    time.Now(),
+            ChainID: "elmahrosa-chain",
+        },
+        Data: types.Data{Txs: []types.Tx{}},
+    }
+    return block
+}
+
+func ValidateBlock(block *types.Block, validators []*Validator) bool {
+    for _, validator := range validators {
+        if validator.Address == block.Header.ProposerAddress {
+            return validator.Stake >= 1000
+        }
+    }
+    return false
+}
