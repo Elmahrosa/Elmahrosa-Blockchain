@@ -8,3 +8,6 @@ mkdir -p regulatory/reporting regulatory/kyc_aml
 mkdir -p scripts/deploy scripts/test
 mkdir -p docs/architecture docs/api
 mkdir -p config/mainnet config/testnet
+git add .
+git commit -m "Initial commit with Elmahrosa Blockchain implementation"
+git push origin main
