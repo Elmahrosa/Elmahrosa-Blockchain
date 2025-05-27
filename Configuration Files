@@ -1,0 +1,9 @@
+chain_id: elmahrosa-mainnet
+consensus:
+  type: pos
+  block_time: 5s
+  min_stake: 1000
+nodes:
+  - region: me-south-1
+    count: 10
+    type: validator
