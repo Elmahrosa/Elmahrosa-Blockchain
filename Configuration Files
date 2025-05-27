@@ -7,3 +7,11 @@ nodes:
   - region: me-south-1
     count: 10
     type: validator
+chain_id: elmahrosa-testnet
+consensus:
+  type: poa
+  block_time: 10s
+nodes:
+  - region: eu-west-1
+    count: 5
+    type: validator
