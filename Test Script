@@ -1,0 +1,14 @@
+package test
+
+import (
+    "testing"
+    "github.com/elmahrosa/consensus/tendermint/core"
+)
+
+func TestValidateBlock(t *testing.T) {
+    validator := &core.Validator{Address: "addr1", Stake: 1000}
+    block := core.ProposeBlock(1)
+    if !core.ValidateBlock(block, []*core.Validator{validator}) {
+        t.Error("Block validation failed")
+    }
+}
