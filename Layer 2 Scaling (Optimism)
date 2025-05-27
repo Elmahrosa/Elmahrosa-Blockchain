@@ -1,0 +1,13 @@
+ package optimism
+
+type Rollup struct {
+    BatchQueue []Transaction
+}
+
+func (r *Rollup) SubmitBatch(txs []Transaction) error {
+    proof, err := GenerateZKProof(txs)
+    if err != nil {
+        return err
+    }
+    return SubmitToMainChain(proof)
+}
