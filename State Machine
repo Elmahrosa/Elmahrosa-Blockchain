@@ -1,0 +1,25 @@
+package state
+
+import (
+    "github.com/syndtr/goleveldb/leveldb"
+)
+
+type StateDB struct {
+    db *leveldb.DB
+}
+
+func NewStateDB(path string) (*StateDB, error) {
+    db, err := leveldb.OpenFile(path, nil)
+    if err != nil {
+        return nil, err
+    }
+    return &StateDB{db: db}, nil
+}
+
+func (s *StateDB) SetState(key, value []byte) error {
+    return s.db.Put(key, value, nil)
+}
+
+func (s *StateDB) GetState(key []byte) ([]byte, error) {
+    return s.db.Get(key, nil)
+}
