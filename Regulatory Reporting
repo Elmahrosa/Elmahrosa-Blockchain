@@ -1,0 +1,8 @@
+import pandas as pd
+from datetime import datetime
+
+def generate_report(start_date, end_date):
+    df = pd.read_sql_query("SELECT * FROM transactions WHERE date BETWEEN %s AND %s", params=(start_date, end_date))
+    report = df.groupby("user_id").sum()
+    report.to_csv(f"regulatory_report_{datetime.now()}.csv")
+    return report
