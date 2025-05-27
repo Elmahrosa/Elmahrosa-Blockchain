@@ -1,0 +1,14 @@
+package ibc
+
+import (
+    "github.com/cosmos/ibc-go/v4/modules/core"
+)
+
+func SendCrossChainMsg(sourceChain, destChain string, msg []byte) error {
+    packet := core.Packet{
+        SourceChain: sourceChain,
+        DestChain:   destChain,
+        Data:        msg,
+    }
+    return core.SendPacket(packet)
+}
