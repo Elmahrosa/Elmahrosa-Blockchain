@@ -1,0 +1,11 @@
+provider "aws" {
+  region = "me-south-1"
+}
+
+resource "aws_eks_cluster" "elmahrosa_cluster" {
+  name     = "elmahrosa-blockchain"
+  role_arn = aws_iam_role.cluster.arn
+  vpc_config {
+    subnet_ids = ["subnet-1", "subnet-2"]
+  }
+}
