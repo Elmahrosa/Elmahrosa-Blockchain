@@ -1,0 +1,18 @@
+# Architecture Overview
+
+The Elmahrosa Blockchain is a secure, scalable, and compliant platform tailored for Egypt's regulatory environment.
+
+## Components
+- **Consensus**: Tendermint Core with PoS/PoA.
+- **State Machine**: LevelDB and IAVL for state management.
+- **Smart Contracts**: CosmWasm (Rust) and EVM-compatible (Solidity).
+- **Layer 2**: Optimism rollups for >2000 TPS.
+- **Cross-Chain**: IBC for interoperability.
+# API Endpoints
+
+## REST API
+- `GET /transactions`: Retrieve transaction list.
+- Authentication: JWT/mTLS.
+
+## GraphQL API
+- Query: `transactions(userId: String!)`
